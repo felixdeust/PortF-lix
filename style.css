@@ -46,8 +46,8 @@ body {
   }
 }
 header {
-  background-image: url('Fond Background.jpg');
-  color: #fcfcfc;
+  background-color: hsl(0, 0%, 100%);
+  color: #000000;
   contour: 1px solid #000000;
   width: 100%;
   background-size: cover;
@@ -62,7 +62,7 @@ header {
    li a {
     
       text-decoration: none;
-      color: #fcfcfc;
+      color: #000000;
       font-size: 33px;
       margin-right: 0;
       font-family: 'Annuario Variable', sans-serif;
