@@ -11,6 +11,7 @@ body {
 
 html {
   overscroll-behavior-x: none;
+  font-size: clamp(14px, 1.2vw, 18px);
 }
 
 body {
@@ -41,35 +42,58 @@ body {
   }
 }
 header {
-  background-color: hsl(0, 0%, 97%);
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  
   border-bottom: 3px solid hsl(0, 27%, 2%);
-  color: #000000;
+  
+  color: #ffffff;
   font-family: "monsterific-bb", sans-serif;
   font-weight: 400;
   font-style: normal;
- 
+  padding-top: 20px;
   width: 100%;
-  background-size: cover;
   padding: 20px;
-  text-align: left;
+  text-align: center;
+
+  &::before {
+    content: "";
+    position: absolute;
+    inset: -5px;
+    z-index: -1;
+    background: url("images/Purple.jpg") center / cover no-repeat;
+    filter: blur(5px);
+  }
   
   h1 {
-    font-size: 300px;
+    font-size: clamp(2.5rem, 15vw, 18.75rem);
     margin: 0;
+    width: 100%;
   }
   nav ul {
-   li a {
-    
       text-decoration: none;
-      color: #000000;
+      color: #fafafa;
       font-family: "superpop-variable",   sans-serif;
       font-variation-settings: "wght" 200;
-      font-size: 40px;
+      font-size: clamp(1.125rem, 2.5vw, 2.5rem);
       margin-right: 0;
       width: auto;
       font-weight: bold;
       
-    } 
+
+    li a {
+      display: inline-block;
+      padding: 7px;
+      transition: transform 0.3s ease;
+    }
+
+    li a:hover {
+      transform: rotate(5deg);
+      background-color: #d13636;
+      border-radius: 10px;
+    
+    }
     list-style-type: none;
     padding: 50px;
     display: flex;
@@ -94,7 +118,7 @@ main {
       margin-right: 0;
     }
       max-width: 100%;
-      font-size: 18px;
+      font-size: clamp(1rem, 1.25vw, 1.125rem);
       line-height: 1.6;
     }
     img {
@@ -317,4 +341,19 @@ h2 {
   body { background: #fff; }
   .cv { max-width: none; width: 210mm; min-height: 297mm; padding: 12mm; }
   * { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+}
+
+footer {
+  background-color: #000000;
+  color: #ffffff;
+  text-align: center;
+  padding: 20px;
+  font-family: "superpop-variable",   sans-serif;
+  font-variation-settings: "wght" 200;
+}
+
+footer img {
+  vertical-align: middle;
+  margin-right: 10px;
+  
 }
