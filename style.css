@@ -45,60 +45,59 @@ header {
   position: relative;
   isolation: isolate;
   overflow: hidden;
-  
+  background-color: #000000;
   border-bottom: 3px solid hsl(0, 27%, 2%);
-  
   color: #ffffff;
   font-family: "monsterific-bb", sans-serif;
   font-weight: 400;
   font-style: normal;
-  padding-top: 20px;
   width: 100%;
   padding: 20px;
   text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+}
 
-  &::before {
-    content: "";
-    position: absolute;
-    inset: -5px;
-    z-index: -1;
-    background: url("images/Purple.jpg") center / cover no-repeat;
-    filter: blur(5px);
-  }
-  
-  h1 {
-    font-size: clamp(2.5rem, 15vw, 18.75rem);
-    margin: 0;
-    width: 100%;
-  }
-  nav ul {
-      text-decoration: none;
-      color: #fafafa;
-      font-family: "superpop-variable",   sans-serif;
-      font-variation-settings: "wght" 200;
-      font-size: clamp(1.125rem, 2.5vw, 2.5rem);
-      margin-right: 0;
-      width: auto;
-      font-weight: bold;
-      
+h1 {
+  font-size: clamp(2.5rem, 15vw, 18.75rem);
+  margin: 0;
+  width: 100%;
+  line-height: 0.9;
+}
 
-    li a {
-      display: inline-block;
-      padding: 7px;
-      transition: transform 0.3s ease;
-    }
+header nav {
+  width: 100%;
+}
 
-    li a:hover {
-      transform: rotate(5deg);
-      background-color: #d13636;
-      border-radius: 10px;
-    
-    }
-    list-style-type: none;
-    padding: 50px;
-    display: flex;
-    gap: clamp(12px, 3vw, 40px);
-  }
+header nav ul {
+  list-style-type: none;
+  text-decoration: none;
+  color: #fafafa;
+  font-family: "superpop-variable", sans-serif;
+  font-variation-settings: "wght" 200;
+  font-size: clamp(1.125rem, 2.5vw, 2.5rem);
+  font-weight: bold;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: clamp(12px, 3vw, 40px);
+}
+
+header nav ul li a {
+  display: inline-block;
+  padding: 7px;
+  transition: transform 0.3s ease;
+}
+
+header nav ul li a:hover {
+  transform: rotate(5deg);
+  background-color: #d671d1;
+  border-radius: 10px;
 }
 body {
   min-height: 100vh;
@@ -106,32 +105,148 @@ body {
   color: #000000;
 }
 main {
-  text-align: center;
-  padding: 20px;
-  background-color: #ffffff;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 2rem;
+  padding: 10px;
+  background-color : #ffffff;
   border-radius: 10px;
   margin-top: 20px;
-  section {
-    margin-bottom: 50px;
-    h2 {
-      font-size: clamp(18px, 3vw, 33px);
-      margin-right: 0;
-    }
-      max-width: 100%;
-      font-size: clamp(1rem, 1.25vw, 1.125rem);
-      line-height: 1.6;
-    }
-    img {
-      max-width: 100%;
-      height: auto;
-      border-radius: 10px;
-    }
-    a {
-      text-decoration: none;
-      color: #d43ec8;
-      font-weight: bold;
-    }
+  max-width: 100%;
+  font-size: clamp(1rem, 1.25vw, 1.125rem);
+  line-height: 1.6;
+}
+
+main section {
+  width: 100%;
+  margin-bottom: 50px;
+  text-align: center;
+}
+
+main li {
+  background-color: #a7a7a7;
+  border-radius: 0px;
+  padding: 10px;
+}
+
+/* Fenêtre rétro pour la section « Mes compétences » */
+main section#competence,
+main section#competences,
+main section#mes-competences,
+main section.competence,
+main section.competences {
+  flex: 1 1 calc(50% - 2rem);
+  position: relative;
+  max-width: 900px;
+  margin: 2.5rem 0 3rem;
+  padding: 3.5rem 1.25rem 1.5rem;
+  background: #d8d2c4;
+  border: 3px solid #222;
+  box-shadow: 6px 6px 0 #222, inset 2px 2px 0 #fff;
+  text-align: left;
+}
+
+/* Fenêtre rétro pour la section « À propos de moi » */
+main section#apropos,
+main section#a-propos,
+main section#about,
+main section.apropos,
+main section.a-propos {
+  flex: 1 1 calc(50% - 2rem);
+  position: relative;
+  max-width: 900px;
+  margin: 2.5rem 0 3rem;
+  padding: 3.5rem 1.25rem 1.5rem;
+  background: #d8d2c4;
+  border: 3px solid #222;
+  box-shadow: 6px 6px 0 #222, inset 2px 2px 0 #fff;
+  text-align: left;
+}
+
+@media (max-width: 768px) {
+  main section#competence,
+  main section#competences,
+  main section#mes-competences,
+  main section.competence,
+  main section.competences,
+  main section#apropos,
+  main section#a-propos,
+  main section#about,
+  main section.apropos,
+  main section.a-propos {
+    flex-basis: 100%;
   }
+}
+
+main section#apropos::before,
+main section#a-propos::before,
+main section#about::before,
+main section.apropos::before,
+main section.a-propos::before {
+  content: "À PROPOS DE MOI";
+  position: absolute;
+  inset: 0 0 auto;
+  padding: 0.55rem 1rem;
+  background: #243d8f;
+  border-bottom: 3px solid #222;
+  color: #fff;
+  font-family: "superpop-variable", sans-serif;
+  font-size: 1rem;
+  font-weight: bold;
+  letter-spacing: 0.08em;
+  text-align: left;
+}
+
+main section#competence::before,
+main section#competences::before,
+main section#mes-competences::before,
+main section.competence::before,
+main section.competences::before {
+  content: "MES COMPÉTENCES";
+  position: absolute;
+  inset: 0 0 auto;
+  padding: 0.55rem 1rem;
+  background: #243d8f;
+  border-bottom: 3px solid #222;
+  color: #fff;
+  font-family: "superpop-variable", sans-serif;
+  font-size: 1rem;
+  font-weight: bold;
+  letter-spacing: 0.08em;
+  text-align: left;
+}
+
+main section#competence li,
+main section#competences li,
+main section#mes-competences li,
+main section.competence li,
+main section.competences li {
+  margin: 0.5rem 0;
+  background: #fffdf4;
+  border: 2px solid #222;
+  box-shadow: 3px 3px 0 #222;
+}
+
+
+
+main h2 {
+  font-size: clamp(18px, 3vw, 33px);
+  margin-right: 0;
+}
+
+main img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 10px;
+}
+
+main a {
+  text-decoration: none;
+  color: #d43ec8;
+  font-weight: bold;
+}
 
 
 :root {
@@ -157,197 +272,19 @@ ul, ol { list-style: none; }
 a { color: inherit; text-decoration: none; }
 a:hover, a:focus-visible { text-decoration: underline; }
 
-/* ---------- Page A4 ---------- */
-.cv {
-  width: 100%;
-  max-width: 210mm;
-  min-height: 297mm;
-  margin: 0 auto;
-  padding: 2.5rem 2rem 2rem;
-  background: var(--fond);
-}
-
-h2 {
-  font-size: 1.25rem;
-  font-weight: 800;
-  text-transform: uppercase;
-  margin-bottom: .6rem;
-}
-
-/* ---------- En-tête ---------- */
-.entete {
-  display: grid;
-  grid-template-columns: 190px 1fr;
-  gap: 1.5rem;
-  margin-bottom: 2rem;
-}
-
-.photo {
-  position: relative;
-  width: 190px;
-  height: 215px;
-  align-self: start;
-}
-.photo::before {
-  content: "";
-  position: absolute;
-  inset: -12px auto auto -22px;
-  width: 170px;
-  height: 230px;
-  background: var(--cyan);
-  border-radius: 90px 0 0 90px;
-}
-.photo img {
-  position: relative;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  background: var(--cyan);
-}
-
-.identite {
-  display: grid;
-  grid-template-columns: auto 1fr;
-  column-gap: 1.5rem;
-  align-items: start;
-}
-
-.nom {
-  background: var(--cyan);
-  color: #fff;
-  font-size: 2.6rem;
-  font-weight: 800;
-  line-height: 1;
-  padding: .35rem .6rem .5rem;
-  border-radius: 4px;
-}
-
-.contact { font-style: normal; font-size: .8rem; display: flex; flex-direction: column; }
-.contact h2 { font-size: 1.3rem; margin-bottom: .15rem; }
-
-.accroche {
-  grid-column: 1 / -1;
-  margin-top: 1.1rem;
-  color: var(--bleu);
-  font-size: 1.6rem;
-  font-weight: 800;
-  text-transform: uppercase;
-}
-
-.intro {
-  grid-column: 1 / -1;
-  max-width: 34rem;
-  margin-top: .9rem;
-  font-size: 1.05rem;
-}
-
-/* ---------- Corps : 2 colonnes ---------- */
-.corps {
-  display: grid;
-  grid-template-columns: 1fr 1.35fr;
-  gap: 1.5rem 2rem;
-}
-
-.colonne-gauche section,
-.colonne-droite section { margin-bottom: 1.6rem; }
-
-.colonne-gauche { padding-left: .5rem; }
-
-.puces li, .simple li { font-size: 1rem; margin-bottom: .45rem; }
-.puces li { position: relative; padding-left: 1.1rem; }
-.puces li::before {
-  content: "";
-  position: absolute;
-  left: 0;
-  top: .5em;
-  width: 6px;
-  height: 6px;
-  border-radius: 50%;
-  background: var(--bleu);
-}
-
-/* Logiciels */
-.logiciels li {
-  display: flex;
-  align-items: center;
-  gap: .6rem;
-  margin-bottom: .4rem;
-  text-transform: uppercase;
-}
-.ico {
-  flex: none;
-  display: inline-grid;
-  place-items: center;
-  width: 20px;
-  height: 20px;
-  border-radius: 4px;
-  font-size: .65rem;
-  font-weight: 800;
-  color: #fff;
-}
-.ico-ms { background: #fff; color: var(--cyan); border: 1.5px solid var(--cyan); }
-.ico-dr { background: #2b2b3a; }
-.ico-ae { background: #00005b; color: #9999ff; }
-.ico-ps { background: #001e36; color: #31a8ff; }
-.ico-id { background: #49021f; color: #ff3366; }
-
-/* Portfolio */
-.portfolio img { width: 90px; height: 90px; display: block; }
-
-/* ---------- Timeline ---------- */
-.timeline {
-  position: relative;
-  padding-left: 1.2rem;
-  border-left: 2px solid var(--bleu);
-}
-.timeline > li { position: relative; margin-bottom: 1.1rem; }
-.timeline > li::before {
-  content: "";
-  position: absolute;
-  left: calc(-1.2rem - 6px);
-  top: .25rem;
-  width: 10px;
-  height: 10px;
-  border-radius: 50%;
-  background: var(--bleu);
-}
-.timeline time {
-  display: block;
-  color: var(--bleu);
-  font-size: .85rem;
-  font-weight: 700;
-}
-.timeline h3 { font-size: .9rem; font-weight: 700; margin-bottom: .15rem; }
-.timeline h3.maj { text-transform: uppercase; }
-.timeline ul { font-size: .8rem; }
-.timeline ul li { margin-bottom: .1rem; }
-.timeline ul li::before { content: "- "; }
-
-/* ---------- Mobile ---------- */
-@media (max-width: 720px) {
-  .cv { padding: 1.5rem 1.2rem; }
-  .entete { grid-template-columns: 1fr; }
-  .photo { margin-left: 1.5rem; }
-  .identite { grid-template-columns: 1fr; row-gap: 1rem; }
-  .nom { font-size: 2.2rem; justify-self: start; }
-  .accroche { font-size: 1.25rem; margin-top: .4rem; }
-  .corps { grid-template-columns: 1fr; }
-  .colonne-gauche { padding-left: 0; }
-}
-
-/* ---------- Impression A4 ---------- */
-@page { size: A4; margin: 0; }
-@media print {
-  body { background: #fff; }
-  .cv { max-width: none; width: 210mm; min-height: 297mm; padding: 12mm; }
-  * { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
-}
 
 footer {
+  section[id="contact-rapide"] {
+    margin-bottom: 5px;
+    margin-top: 5px;
+    text-align: center;
+
+
+  }
   background-color: #000000;
   color: #ffffff;
   text-align: center;
-  padding: 20px;
+  padding: 10px;
   font-family: "superpop-variable",   sans-serif;
   font-variation-settings: "wght" 200;
 }
