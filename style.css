@@ -96,8 +96,9 @@ header nav ul li a {
 
 header nav ul li a:hover {
   transform: rotate(5deg);
-  background-color: #d671d1;
-  border-radius: 10px;
+  background-color: #243d8f;
+  
+  ;
 }
 body {
   min-height: 100vh;
