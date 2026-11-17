@@ -275,19 +275,73 @@ a:hover, a:focus-visible { text-decoration: underline; }
 
 
 footer {
-  section[id="contact-rapide"] {
-    margin-bottom: 5px;
-    margin-top: 5px;
-    text-align: center;
-
-
-  }
   background-color: #000000;
   color: #ffffff;
   text-align: center;
   padding: 10px;
   font-family: "superpop-variable",   sans-serif;
   font-variation-settings: "wght" 200;
+}
+
+footer section[id="contact-rapide"] {
+  position: relative;
+  width: min(100% - 2rem, 900px);
+  margin: 2.5rem auto 3rem;
+  padding: 3.5rem 1.25rem 1.5rem;
+  background: #d8d2c4;
+  border: 3px solid #222;
+  box-shadow: 6px 6px 0 #222, inset 2px 2px 0 #fff;
+  color: #000;
+  text-align: left;
+}
+
+footer section[id="contact-rapide"]::before {
+  content: "CONTACT";
+  position: absolute;
+  inset: 0 0 auto;
+  padding: 0.55rem 1rem;
+  background: #243d8f;
+  border-bottom: 3px solid #222;
+  color: #fff;
+  font-family: "superpop-variable", sans-serif;
+  font-size: 1rem;
+  font-weight: bold;
+  letter-spacing: 0.08em;
+  text-align: left;
+}
+
+footer section[id="contact-rapide"] form {
+  width: 100%;
+}
+
+footer section[id="contact-rapide"] input,
+footer section[id="contact-rapide"] textarea {
+  display: block;
+  width: 100%;
+  margin: 0.5rem 0 1rem;
+  padding: 0.8rem;
+  background: #fffdf4;
+  border: 2px solid #222;
+  box-shadow: 3px 3px 0 #222;
+  font: inherit;
+}
+
+footer section[id="contact-rapide"] textarea {
+  min-height: 10rem;
+  resize: vertical;
+}
+
+footer section[id="contact-rapide"] button,
+footer section[id="contact-rapide"] input[type="submit"] {
+  width: auto;
+  padding: 0.7rem 1.25rem;
+  background: #243d8f;
+  border: 2px solid #222;
+  box-shadow: 3px 3px 0 #222;
+  color: #fff;
+  font: inherit;
+  font-weight: bold;
+  cursor: pointer;
 }
 
 footer img {
