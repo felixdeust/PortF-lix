@@ -1,5 +1,4 @@
- 
- * {
+* {
   box-sizing: border-box;
 }
 
@@ -98,7 +97,8 @@ header nav ul li a {
 header nav ul li a:hover {
   transform: rotate(5deg);
   background-color: #243d8f;
-  border: 2px solid #000000;
+  
+  ;
 }
 body {
   min-height: 100vh;
@@ -106,7 +106,6 @@ body {
   color: #000000;
 }
 main {
-  width: 100%;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -121,17 +120,120 @@ main {
   line-height: 1.6;
 }
 
-
 main section {
   width: 100%;
   margin-bottom: 50px;
   text-align: center;
 }
 
+main li {
+  background-color: #a7a7a7;
+  border-radius: 0px;
+  padding: 10px;
+}
+
+/* Fenêtre rétro pour la section « Mes compétences » */
+main section#competence,
+main section#competences,
+main section#mes-competences,
+main section.competence,
+main section.competences {
+  flex: 1 1 calc(50% - 2rem);
+  position: relative;
+  max-width: 900px;
+  margin: 2.5rem 0 3rem;
+  padding: 3.5rem 1.25rem 1.5rem;
+  background: #d8d2c4;
+  border: 3px solid #222;
+  box-shadow: 6px 6px 0 #222, inset 2px 2px 0 #fff;
+  text-align: left;
+}
+
+/* Fenêtre rétro pour la section « À propos de moi » */
+main section#apropos,
+main section#a-propos,
+main section#about,
+main section.apropos,
+main section.a-propos {
+  flex: 1 1 calc(50% - 2rem);
+  position: relative;
+  max-width: 900px;
+  margin: 2.5rem 0 3rem;
+  padding: 3.5rem 1.25rem 1.5rem;
+  background: #d8d2c4;
+  border: 3px solid #222;
+  box-shadow: 6px 6px 0 #222, inset 2px 2px 0 #fff;
+  text-align: left;
+}
+
+@media (max-width: 768px) {
+  main section#competence,
+  main section#competences,
+  main section#mes-competences,
+  main section.competence,
+  main section.competences,
+  main section#apropos,
+  main section#a-propos,
+  main section#about,
+  main section.apropos,
+  main section.a-propos {
+    flex-basis: 100%;
+  }
+}
+
+main section#apropos::before,
+main section#a-propos::before,
+main section#about::before,
+main section.apropos::before,
+main section.a-propos::before {
+  content: "À PROPOS DE MOI";
+  position: absolute;
+  inset: 0 0 auto;
+  padding: 0.55rem 1rem;
+  background: #243d8f;
+  border-bottom: 3px solid #222;
+  color: #fff;
+  font-family: "superpop-variable", sans-serif;
+  font-size: 1rem;
+  font-weight: bold;
+  letter-spacing: 0.08em;
+  text-align: left;
+}
+
+main section#competence::before,
+main section#competences::before,
+main section#mes-competences::before,
+main section.competence::before,
+main section.competences::before {
+  content: "MES COMPÉTENCES";
+  position: absolute;
+  inset: 0 0 auto;
+  padding: 0.55rem 1rem;
+  background: #243d8f;
+  border-bottom: 3px solid #222;
+  color: #fff;
+  font-family: "superpop-variable", sans-serif;
+  font-size: 1rem;
+  font-weight: bold;
+  letter-spacing: 0.08em;
+  text-align: left;
+}
+
+main section#competence li,
+main section#competences li,
+main section#mes-competences li,
+main section.competence li,
+main section.competences li {
+  margin: 0.5rem 0;
+  background: #fffdf4;
+  border: 2px solid #222;
+  box-shadow: 3px 3px 0 #222;
+}
+
 
 
 main h2 {
-  font-size: clamp(16px, 2.2vw, 24px);
+  font-size: clamp(18px, 3vw, 33px);
   margin-right: 0;
 }
 
@@ -141,10 +243,9 @@ main img {
   border-radius: 10px;
 }
 
-
 main a {
   text-decoration: none;
-  color: #d43ec8;
+  color: #3614c9;
   font-weight: bold;
 }
 
@@ -164,10 +265,33 @@ html { scroll-padding-top: 1rem; }
 body {
   font-family: var(--police);
   color: var(--texte);
-  background: #000000;
+  background: #e9edf1;
   line-height: 1.35;
 }
 
 ul, ol { list-style: none; }
 a { color: inherit; text-decoration: none; }
 a:hover, a:focus-visible { text-decoration: underline; }
+
+
+footer {
+  section[id="contact-rapide"] {
+    margin-bottom: 5px;
+    margin-top: 5px;
+    text-align: center;
+
+
+  }
+  background-color: #000000;
+  color: #ffffff;
+  text-align: center;
+  padding: 10px;
+  font-family: "superpop-variable",   sans-serif;
+  font-variation-settings: "wght" 200;
+}
+
+footer img {
+  vertical-align: middle;
+  margin-right: 10px;
+  
+}
