@@ -6,17 +6,17 @@ html,
 body {
   width: 100%;
   max-width: 100%;
-  overflow-x: clip;
 }
 
 html {
+  overflow-x: clip;
   overscroll-behavior-x: none;
   font-size: clamp(14px, 1.2vw, 18px);
+  scroll-padding-top: 1rem;
 }
 
 body {
   margin: 0;
-  
 }
 
 @media (max-width: 768px) {
@@ -38,7 +38,6 @@ body {
 
   header nav ul li a {
     font-size: clamp(18px, 5vw, 33px);
-   
   }
 }
 header {
@@ -97,13 +96,13 @@ header nav ul li a {
 header nav ul li a:hover {
   transform: rotate(5deg);
   background-color: #243d8f;
-  
-  ;
 }
 body {
   min-height: 100vh;
-  background-color: #fffdff;
+  background-color: #e9edf1;
   color: #000000;
+  font-family: "Gantari", "Segoe UI", Helvetica, Arial, sans-serif;
+  line-height: 1.35;
 }
 main {
   display: flex;
@@ -112,7 +111,7 @@ main {
   align-items: flex-start;
   gap: 2rem;
   padding: 10px;
-  background-color : #ffffff;
+  background-color: #ffffff;
   border-radius: 10px;
   margin-top: 20px;
   max-width: 100%;
@@ -250,28 +249,20 @@ main a {
 }
 
 
-:root {
-  --cyan: #00aeef;
-  --bleu: #4a7ec2;
-  --texte: #000;
-  --fond: #fff;
-  --police: "Gantari", "Segoe UI", Helvetica, Arial, sans-serif;
+ul,
+ol {
+  list-style: none;
 }
 
-* { box-sizing: border-box; margin: 0; padding: 0; }
-
-html { scroll-padding-top: 1rem; }
-
-body {
-  font-family: var(--police);
-  color: var(--texte);
-  background: #e9edf1;
-  line-height: 1.35;
+a {
+  color: inherit;
+  text-decoration: none;
 }
 
-ul, ol { list-style: none; }
-a { color: inherit; text-decoration: none; }
-a:hover, a:focus-visible { text-decoration: underline; }
+a:hover,
+a:focus-visible {
+  text-decoration: underline;
+}
 
 
 footer {
@@ -345,7 +336,6 @@ footer section[id="contact-rapide"] input[type="submit"] {
 }
 
 footer img {
-  vertical-align: middle;
   margin-right: 10px;
-  
+  vertical-align: middle;
 }

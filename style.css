@@ -1,69 +1,75 @@
-* {
-  box-sizing: border-box;
+:root {
+  --cyan: #00aeef;
+  --bleu: #4a7ec2;
+  --texte: #000;
+  --fond: #fff;
+  --police: "Gantari", "Segoe UI", Helvetica, Arial, sans-serif;
 }
 
-html,
-body {
-  width: 100%;
-  max-width: 100%;
-  overflow-x: clip;
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
 html {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: clip;
   overscroll-behavior-x: none;
   font-size: clamp(14px, 1.2vw, 18px);
+  scroll-padding-top: 1rem;
 }
 
 body {
-  margin: 0;
-  
+  min-height: 100vh;
+  width: 100%;
+  max-width: 100%;
+  overflow-x: clip;
+  font-family: var(--police);
+  color: var(--texte);
+  background: #e9edf1;
+  line-height: 1.35;
 }
 
-@media (max-width: 768px) {
-  .ma-colonne {
-    width: 100%;
-    flex-direction: column;
-  }
-
-  header,
-  main {
-    padding: 16px;
-  }
-
-  header nav ul {
-    flex-wrap: wrap;
-    padding: 16px 0;
-    gap: 12px;
-  }
-
-  header nav ul li a {
-    font-size: clamp(18px, 5vw, 33px);
-   
-  }
+ul,
+ol {
+  list-style: none;
 }
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+a:hover,
+a:focus-visible {
+  text-decoration: underline;
+}
+
 header {
   position: relative;
   isolation: isolate;
-  overflow: hidden;
-  background-color: #000000;
-  border-bottom: 3px solid hsl(0, 27%, 2%);
-  color: #ffffff;
-  font-family: "monsterific-bb", sans-serif;
-  font-weight: 400;
-  font-style: normal;
   width: 100%;
-  padding: 20px;
-  text-align: center;
+  overflow: hidden;
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 0.5rem;
+  padding: 20px;
+  border-bottom: 3px solid hsl(0, 27%, 2%);
+  background: #000;
+  color: #fff;
+  text-align: center;
+  font-family: "monsterific-bb", sans-serif;
+  font-weight: 400;
+  font-style: normal;
 }
 
 h1 {
-  font-size: clamp(2.5rem, 15vw, 18.75rem);
-  margin: 0;
   width: 100%;
+  margin: 0;
+  font-size: clamp(2.5rem, 15vw, 18.75rem);
   line-height: 0.9;
 }
 
@@ -72,20 +78,16 @@ header nav {
 }
 
 header nav ul {
-  list-style-type: none;
-  text-decoration: none;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: clamp(12px, 3vw, 40px);
   color: #fafafa;
   font-family: "superpop-variable", sans-serif;
-  font-variation-settings: "wght" 200;
   font-size: clamp(1.125rem, 2.5vw, 2.5rem);
   font-weight: bold;
-  margin: 0;
-  padding: 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: clamp(12px, 3vw, 40px);
+  font-variation-settings: "wght" 200;
 }
 
 header nav ul li a {
@@ -96,26 +98,20 @@ header nav ul li a {
 
 header nav ul li a:hover {
   transform: rotate(5deg);
-  background-color: #243d8f;
-  
-  ;
+  background: #243d8f;
 }
-body {
-  min-height: 100vh;
-  background-color: #fffdff;
-  color: #000000;
-}
+
 main {
+  max-width: 100%;
+  margin-top: 20px;
+  padding: 10px;
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
   align-items: flex-start;
+  justify-content: center;
   gap: 2rem;
-  padding: 10px;
-  background-color : #ffffff;
   border-radius: 10px;
-  margin-top: 20px;
-  max-width: 100%;
+  background: #fff;
   font-size: clamp(1rem, 1.25vw, 1.125rem);
   line-height: 1.6;
 }
@@ -127,46 +123,113 @@ main section {
 }
 
 main li {
-  background-color: #a7a7a7;
-  border-radius: 0px;
   padding: 10px;
+  border-radius: 0;
+  background: #a7a7a7;
 }
 
-/* Fenêtre rétro pour la section « Mes compétences » */
+main h2 {
+  margin-right: 0;
+  font-size: clamp(18px, 3vw, 33px);
+}
+
+main img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 10px;
+}
+
+main a {
+  color: #d43ec8;
+  font-weight: bold;
+}
+
 main section#competence,
 main section#competences,
 main section#mes-competences,
 main section.competence,
-main section.competences {
-  flex: 1 1 calc(50% - 2rem);
-  position: relative;
-  max-width: 900px;
-  margin: 2.5rem 0 3rem;
-  padding: 3.5rem 1.25rem 1.5rem;
-  background: #d8d2c4;
-  border: 3px solid #222;
-  box-shadow: 6px 6px 0 #222, inset 2px 2px 0 #fff;
-  text-align: left;
-}
-
-/* Fenêtre rétro pour la section « À propos de moi » */
+main section.competences,
 main section#apropos,
 main section#a-propos,
 main section#about,
 main section.apropos,
 main section.a-propos {
-  flex: 1 1 calc(50% - 2rem);
   position: relative;
+  flex: 1 1 calc(50% - 2rem);
   max-width: 900px;
   margin: 2.5rem 0 3rem;
   padding: 3.5rem 1.25rem 1.5rem;
-  background: #d8d2c4;
   border: 3px solid #222;
+  background: #d8d2c4;
   box-shadow: 6px 6px 0 #222, inset 2px 2px 0 #fff;
   text-align: left;
 }
 
+main section#apropos::before,
+main section#a-propos::before,
+main section#about::before,
+main section.apropos::before,
+main section.a-propos::before,
+main section#competence::before,
+main section#competences::before,
+main section#mes-competences::before,
+main section.competence::before,
+main section.competences::before {
+  position: absolute;
+  inset: 0 0 auto;
+  padding: 0.55rem 1rem;
+  border-bottom: 3px solid #222;
+  background: #243d8f;
+  color: #fff;
+  font-family: "superpop-variable", sans-serif;
+  font-size: 1rem;
+  font-weight: bold;
+  letter-spacing: 0.08em;
+  text-align: left;
+}
+
+main section#apropos::before,
+main section#a-propos::before,
+main section#about::before,
+main section.apropos::before,
+main section.a-propos::before {
+  content: "À PROPOS DE MOI";
+}
+
+main section#competence::before,
+main section#competences::before,
+main section#mes-competences::before,
+main section.competence::before,
+main section.competences::before {
+  content: "MES COMPÉTENCES";
+}
+
+main section#competence li,
+main section#competences li,
+main section#mes-competences li,
+main section.competence li,
+main section.competences li {
+  margin: 0.5rem 0;
+  border: 2px solid #222;
+  background: #fffdf4;
+  box-shadow: 3px 3px 0 #222;
+}
+
 @media (max-width: 768px) {
+  header,
+  main {
+    padding: 16px;
+  }
+
+  header nav ul {
+    gap: 12px;
+  }
+
+  header nav ul li a {
+    font-size: clamp(18px, 5vw, 33px);
+  }
+
+  .ma-colonne,
   main section#competence,
   main section#competences,
   main section#mes-competences,
@@ -177,121 +240,31 @@ main section.a-propos {
   main section#about,
   main section.apropos,
   main section.a-propos {
+    width: 100%;
     flex-basis: 100%;
   }
+
+  .ma-colonne {
+    flex-direction: column;
+  }
 }
-
-main section#apropos::before,
-main section#a-propos::before,
-main section#about::before,
-main section.apropos::before,
-main section.a-propos::before {
-  content: "À PROPOS DE MOI";
-  position: absolute;
-  inset: 0 0 auto;
-  padding: 0.55rem 1rem;
-  background: #243d8f;
-  border-bottom: 3px solid #222;
-  color: #fff;
-  font-family: "superpop-variable", sans-serif;
-  font-size: 1rem;
-  font-weight: bold;
-  letter-spacing: 0.08em;
-  text-align: left;
-}
-
-main section#competence::before,
-main section#competences::before,
-main section#mes-competences::before,
-main section.competence::before,
-main section.competences::before {
-  content: "MES COMPÉTENCES";
-  position: absolute;
-  inset: 0 0 auto;
-  padding: 0.55rem 1rem;
-  background: #243d8f;
-  border-bottom: 3px solid #222;
-  color: #fff;
-  font-family: "superpop-variable", sans-serif;
-  font-size: 1rem;
-  font-weight: bold;
-  letter-spacing: 0.08em;
-  text-align: left;
-}
-
-main section#competence li,
-main section#competences li,
-main section#mes-competences li,
-main section.competence li,
-main section.competences li {
-  margin: 0.5rem 0;
-  background: #fffdf4;
-  border: 2px solid #222;
-  box-shadow: 3px 3px 0 #222;
-}
-
-
-
-main h2 {
-  font-size: clamp(18px, 3vw, 33px);
-  margin-right: 0;
-}
-
-main img {
-  max-width: 100%;
-  height: auto;
-  border-radius: 10px;
-}
-
-main a {
-  text-decoration: none;
-  color: #d43ec8;
-  font-weight: bold;
-}
-
-
-:root {
-  --cyan: #00aeef;
-  --bleu: #4a7ec2;
-  --texte: #000;
-  --fond: #fff;
-  --police: "Gantari", "Segoe UI", Helvetica, Arial, sans-serif;
-}
-
-* { box-sizing: border-box; margin: 0; padding: 0; }
-
-html { scroll-padding-top: 1rem; }
-
-body {
-  font-family: var(--police);
-  color: var(--texte);
-  background: #e9edf1;
-  line-height: 1.35;
-}
-
-ul, ol { list-style: none; }
-a { color: inherit; text-decoration: none; }
-a:hover, a:focus-visible { text-decoration: underline; }
-
 
 footer {
-  section[id="contact-rapide"] {
-    margin-bottom: 5px;
-    margin-top: 5px;
-    text-align: center;
-
-
-  }
-  background-color: #000000;
-  color: #ffffff;
-  text-align: center;
   padding: 10px;
-  font-family: "superpop-variable",   sans-serif;
+  background: #000;
+  color: #fff;
+  text-align: center;
+  font-family: "superpop-variable", sans-serif;
   font-variation-settings: "wght" 200;
 }
 
-footer img {
-  vertical-align: middle;
-  margin-right: 10px;
-  
+footer section[id="contact-rapide"] {
+  margin: 5px 0;
+  text-align: center;
 }
+
+footer img {
+  margin-right: 10px;
+  vertical-align: middle;
+}
+
